@@ -1,0 +1,12 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "pa_banana": {
+      "textures": "textures/items/pamobile/banana"
+    },
+    "pa_fugu": {
+      "textures": "textures/items/pamobile/fugu"
+    }
+  }
+}

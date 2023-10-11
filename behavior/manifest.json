@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "「其の不健康なアドオンカンパニーより提供する特別mobアドオン」",
+    "name": "mob追加と武器追加",
+    "uuid": "be347e87-e95b-4f7b-a00b-445bba071f38",
+    "version": [1,0,0],
+    "min_engine_version": [1,20,0]
+  },
+  "modules": [
+    {
+      "description": "これはビヘイビアパックです。",
+      "type": "data",
+      "uuid": "40c19c4f-cb7f-4547-820c-abc9ae6bc48f",
+      "version": [1,0,0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "6df1dc20-aa2e-4204-b769-2055642ca52e",
+      "version": [1,0,0]
+    }
+  ]
+}

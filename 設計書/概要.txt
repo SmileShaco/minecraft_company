@@ -1,0 +1,88 @@
+完全ストーリー型ラッシュ型のアクションワールドへ！
+システム追加
+・次のステージに行くか、復活アイテムを使用しない限り味方は復活できない
+・全滅した場合は冥府の巨釜を倒して全員復活か最初っから
+
+ステージ
+初期のスポーン地点(チュートリアル)
+- mob
+・ゾンビサモナー(BOSS) zombie_summoner
+・召喚された強化ゾンビ zombie_junmper
+- item
+・ストーリの断片
+
+邪悪の村人の植民地
+- mob
+・邪悪な村長(BOSS) evocation_illager_leader
+・召喚された邪悪な村人　type=crosbow_illager and axe_illager
+・召喚された邪悪なゴーレム type=golem_illager
+・定期的にスポーンする邪悪なサモナー evocation_illager_subleader
+・邪悪なサモナーから召喚されたゾンビ zombie_junmper
+- item
+・ストーリの断片
+
+初めてのネザー要塞基地
+- mob
+・冥府王の側近(BOSS)type=ウィザースケルトンv1(サモン)
+・冥府王の側近(BOSS)type=ウィザースケルトンv2(突撃)
+・冥府王の側近(BOSS)type=ウィザースケルトンv3(魔法攻撃エンダードラゴンブレス)
+・召喚された冥府王の突撃兵隊type=ウィザースケルトンv4
+・定期的に召喚されるブレイズ_v1
+- item
+・ストーリの断片
+
+第２拠点の町
+- mob
+・ゾンビサモナー(BOSS) zombie_summoner
+・召喚された強化ゾンビ zombie_junmper
+
+粘土の製造基地(元ゴーレムトラップ)
+- mob
+・呪われし魔女(BOSS) violet_witch
+・召喚されし奴隷 type=邪悪な村人model=村人
+
+新ゴーレムトラップ基地(建築トラップをしていた場所)
+・呪われし魔女(BOSS) scarlet_witch
+・召喚されし奴隷 type=邪悪な村人model=村人
+
+呪われた居城(田中の城)
+・呪われた王様(BOSS) death_eater
+・召喚されし奴隷 type=邪悪な村人model=村人
+
+
+ガンギマリ刑務所
+・ガンギマリの教祖(BOSS) type=ガンギマリshinchan_v1
+・ガンギマリの信者 type=ガンギマリshinchan_v2
+・召喚されしガンギマリのフグ type=オオカミ
+
+ベッカム時代の古代拠点
+・ウォーデン(BOSS)
+・召喚されし闇の戦士 type=ウィザースケルトンv5
+
+新ベッカムのラブホ住宅
+・sexy_zombie
+
+天空城
+・god_crystal
+
+囚われし闇市場(天空城)
+・呪われた村長 type=村人ゾンビ 
+・呪われた村人ゾンビ
+・召喚された強化ゾンビ type=zombie_v2
+
+ガーディアン工房
+ボタンで召喚
+・エルダーガーディアンお宝くじ(BOSS)
+・一緒に召喚されるガーディアン
+
+暗黒世界の異空間ゲート(エンドポータル)
+・暗黒世界の門番(BOSS)x3 type=original_mob_v6 model=enderman
+
+暗黒世界(エンダードラゴン)
+・???(BOSS) type=ender_dragon
+・??? type=ウィザースケルトンv1(サモン)
+
+
+裏ステージ
+裏切者(conchan)
+???(冥府王ハーデス)

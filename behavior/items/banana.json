@@ -1,0 +1,64 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"category": "Equipment",
+			"identifier": "pa:banana"
+		},
+		"components": {
+			"minecraft:icon": {
+				"texture": "pa_banana"
+			},
+			"minecraft:use_duration": 1.6,
+			"minecraft:use_animation": "eat",
+			"minecraft:render_offsets": "flesh",
+			"minecraft:food": {
+				"nutrition": 3,
+				"can_always_eat": true,
+				"saturation_modifier": "supernatural",
+				"on_consume": {
+					"event": "eat_banana"
+				}
+			},
+			"minecraft:hand_equipped": {}
+		},
+		"events":{
+			"eat_banana": {
+				"sequence": [
+					{
+						"add_mob_effect": {
+							"effect": "absorption",
+							"target": "self",
+							"duration": 60,
+							"amplifier": 10
+						}
+					},
+					{
+						"add_mob_effect": {
+							"effect": "luck",
+							"target": "self",
+							"duration": 600,
+							"amplifier": 50
+						}
+					},
+					{
+						"add_mob_effect": {
+							"effect": "regeneration",
+							"target": "self",
+							"duration": 60,
+							"amplifier": 2
+						}
+					},
+					{
+						"add_mob_effect": {
+							"effect": "weakness",
+							"target": "self",
+							"duration": 20,
+							"amplifier": 100
+						}
+					}
+				]
+			}
+		}
+	}
+}

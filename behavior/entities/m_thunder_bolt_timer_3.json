@@ -1,0 +1,46 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "m:thunder_bolt_timer_3",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 3,
+				"time_down_event": {
+					"event": "thunder_bolt"
+				}
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"thunder_bolt": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"execute at @e[type=player,r=200] run summon lightning_bolt ~ ~ ~",
+								"kill @e[type=m:thunder_bolt_timer_3]"
+							],
+							"target": "self"
+						}
+					}
+				]
+			}
+		}
+	}
+}

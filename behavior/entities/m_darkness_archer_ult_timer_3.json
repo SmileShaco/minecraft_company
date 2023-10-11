@@ -1,0 +1,52 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "m:darkness_archer_ult_timer_3",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:timer": {
+				"looping": false,
+				"time": 3,
+				"time_down_event": {
+					"event": "darkness_debuff"
+				}
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"events": {
+			"darkness_debuff": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"effect @a wither 10 1",
+								"effect @a weakness 30 1",
+								"effect @a instant_damage 1 1",
+								"effect @a slowness 20 3",
+								"effect @e[type=b:darkness_wizard] regeneration 3 255",
+								"effect @e[type=b:darkness_night] regeneration 3 255",
+								"effect @e[type=b:darkness_archer] regeneration 3 255",
+								"kill @e[type=m:darkness_archer_ult_timer_3]"
+							],
+							"target": "self"
+						}
+					}
+				]
+			}
+		}
+	}
+}

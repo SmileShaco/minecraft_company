@@ -1,0 +1,1 @@
+execute at @e[type=player] run summon lightning_bolt ~ ~ ~

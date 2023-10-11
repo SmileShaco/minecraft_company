@@ -1,0 +1,210 @@
+{
+  "format_version": "1.18.20",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "visible": false,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:experience_reward": { 
+        "on_death": "Math.Min(query.player_level * 7, 100)" //死んだときの経験値設定
+      },
+      "minecraft:type_family": {
+        "family": [ "player" ] //mobの属性値設定
+      },
+      "minecraft:is_hidden_when_invisible": { //これがあると透明になったとき認知されなくなる
+      },
+      "minecraft:loot": { //死んだときのドロップ設定のファイルの参照
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": { //謎ドキュメントにない
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": { //これがあるとはしご登れるようになれる
+      },
+      "minecraft:movement": { //移動速度
+        "value": 0.1
+      },
+      "minecraft:hurt_on_condition": { //ダメージ受ける要因　これはマグマによる　tickが少ないほどダメージ判定が増える
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": { //攻撃力
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": { //プレイヤーの各アクションがどれだけ疲労するか
+        "heal": 6,
+        "jump": 0.05,
+        "sprint_jump": 0.2,
+        "mine": 0.005,
+        "attack": 0.1,
+        "damage": 0.1,
+        "walk": 0.0,
+        "sprint": 0.01,
+        "swim": 0.01
+      },
+      "minecraft:player.saturation": { //プレイヤーの食事の必要性
+        "value": 5,
+         "max": 20
+      },
+      "minecraft:player.exhaustion": { //プレイヤーの疲労レベルを定義します。
+        "value": 0,
+        "max": 20
+      },
+      "minecraft:player.level": { //レベルセッティング
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {//各プレイヤーのアクションに必要な経験値
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {//実体が特定のブロックを呼吸できるようにし、窒息させる能力を与えます。
+        "total_supply": 15,//エンティティが息を止められる秒数。
+        "suffocate_time": -1,//	窒息ダメージ間の秒数。
+        "inhale_time": 3.75,//呼吸を最大まで回復するまでの秒数。
+        "generates_bubbles": false,//true の場合、エンティティは水中にあるときに目に見える泡が表示されます
+        "breathes_water": false,
+        "breathes_solids": false,
+        "breathes_lava": false,
+        "breathes_air": true,
+        "breathe_blocks": []//呼吸できるブロックを指定できる
+      },
+      "minecraft:nameable": {
+        "always_show": true, //名前を表示させる
+        "allow_name_tag_renaming": false //trueにすると名前タグで名前変更できる
+      },
+      "minecraft:physics": {//エンティティが重力の影響を受けるかどうか、オブジェクトと衝突するかどうかなど
+      },
+      "minecraft:pushable": {//エンティティを他のエンティティとピストンの間に押し込むことができるものを定義します。
+        "is_pushable": false,//ほかのmobによりプッシュされるか
+        "is_pushable_by_piston": true//ピストンによってプッシュされるか
+      },
+      "minecraft:insomnia": {//ファントムがスポーンするかどうかを確認する
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {//エンティティに乗れるかどうか
+        "seat_count": 2,//この座席が有効になるためにこのエンティティに乗車できる乗客の最大数
+        "family_types": [
+          "parrot_tame"//オウムを飼いならす
+        ],
+        "pull_in_entities": true,//family_typesにあるmobを指定した位置へ座らせることができる。
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {//よくわかんないけど処理速度に関係する
+      },
+      "minecraft:block_climber": {},//プレイヤは足場ブロックを操作できる
+      "minecraft:environment_sensor": {//環境センサーによる以下をトリガーする
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:trigger_raid"
+        }
+      }
+    },
+
+    "events": {
+      "minecraft:gain_bad_omen": {//不吉な予感付与
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {//不吉な予感除去
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"//祝福トリガー英雄
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]//襲撃モード付与
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]//襲撃モード除去
+        }
+      }
+    }
+  }
+}

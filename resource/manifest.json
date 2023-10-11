@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "「其の不健康なアドオンカンパニーより提供する特別mobアドオン_リソースパック」",
+    "name": "mob追加と武器追加_リソースパック",
+    "uuid": "6df1dc20-aa2e-4204-b769-2055642ca52e",
+    "version": [1,0,0],
+    "min_engine_version": [1,20,0]
+  },
+  "modules": [
+    {
+      "description": "これはリソースパックです。",
+      "type": "resources",
+      "uuid": "868a77ad-195d-47b9-b219-356656ef4898",
+      "version": [1,0,0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "c367b519-6013-4d66-8cdf-963c3e07f8ff",
+      "version": [1,0,0]
+    }
+  ]
+}

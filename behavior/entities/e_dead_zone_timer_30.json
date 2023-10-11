@@ -1,0 +1,56 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "b:darkness_wizard",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:experience_reward": {},
+			"minecraft:nameable": {},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:collision_box": {
+				"width": 1.4,
+				"height": 1.6
+			},
+			"minecraft:physics": {},
+			"minecraft:timer": {
+				"looping": true,
+				"time": 30,
+				"time_down_event": {
+					"event": "summon_dead_zone"
+				}
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {},
+			"summon_dead_zone": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"say 貴様らはこれで終わりだ!! true death!!",
+								"playsound mob.evocation_illager.cast_spell @a ~ ~ ~ 100",
+								"summon m:dead_zone",
+							],
+							"target": "self"
+						}
+					}
+				]
+			}
+		}
+	}
+}
