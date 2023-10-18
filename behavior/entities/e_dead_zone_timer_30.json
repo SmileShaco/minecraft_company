@@ -44,7 +44,7 @@
 							"command": [
 								"say 貴様らはこれで終わりだ!! true death!!",
 								"playsound mob.evocation_illager.cast_spell @a ~ ~ ~ 100",
-								"summon m:dead_zone",
+								"summon m:dead_zone"
 							],
 							"target": "self"
 						}

@@ -1,7 +1,6 @@
 {
   "materials": {
     "version": "1.0.0",
-    "popo:entity": {},
-    "shinchan:entity": {}
+    "testmob:entity": {}
   }
 }

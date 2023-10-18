@@ -3313,20 +3313,6 @@
              "pitch" : [ 0.80, 1.20 ],
              "volume" : 1.0
           },
-          "pa:popo" : {
-            "events" : {
-               "ambient" : "mob.ghast.moan",
-               "death" : "mob.ghast.scream",
-               "fuse" : {
-                  "pitch" : 0.50,
-                  "sound" : "random.fuse",
-                  "volume" : 1.0
-               },
-               "hurt" : "mob.creeper.say"
-            },
-            "pitch" : [ 0.80, 1.20 ],
-            "volume" : 3.0
-         },
           "dolphin" : {
              "events" : {
                 "ambient" : "mob.dolphin.idle",
@@ -4757,31 +4743,6 @@
              "pitch" : [ 0.80, 1.20 ],
              "volume" : 1.0
           },
-          "pa:shinchan" : {
-            "events" : {
-               "ambient" : "mob.witch.ambient",
-               "ambient.in.raid" : {
-                  "pitch" : [ 1.20, 1.60 ],
-                  "sound" : "mob.witch.ambient",
-                  "volume" : 6.0
-               },
-               "celebrate" : "mob.witch.celebrate",
-               "death" : "mob.witch.death",
-               "drink" : {
-                  "pitch" : 1.0,
-                  "sound" : "mob.witch.drink",
-                  "volume" : 1.0
-               },
-               "hurt" : "mob.witch.hurt",
-               "throw" : {
-                  "pitch" : 1.0,
-                  "sound" : "mob.witch.throw",
-                  "volume" : 1.0
-               }
-            },
-            "pitch" : [ 1.20, 1.60 ],
-            "volume" : 3.0
-         },
           "wither" : {
              "events" : {
                 "ambient" : "mob.wither.ambient",
